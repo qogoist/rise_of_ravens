@@ -1,3 +1,1 @@
-# 🐦 Rise of Ravens 🐦
-
-Welcome to Rise of Ravens. Join our Movement >>HERE<<
+Official Website of Rise of Ravens 🐦

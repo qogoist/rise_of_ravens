@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="rainParticles.js" defer></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+  <title>Rise of Ravens</title>
+</head>
+
+<body>
+  <main>
+    <canvas id="canvasRain"></canvas>
+    <div class="flex-container">
+      <div class="card">
+        <h1>About the Game</h1>
+        <p>
+          Rise of Ravens is a multiplayer game set in a futuristic world. The goal of the game is to demonstrate the
+          inner workings of fascism and illustrate the rise of a fascist movement by letting the players experience it
+          in a virtual manner.</br>
+          In Rise of Ravens, one player will take on the role as leader of a fascist movement and others will play as
+          their followers. Together they try to fulfil the goal of their movement – total domination.
+          As the leader, you have to manage your resources and followers in order to steadily grow your influence and
+          power. As your movement grows, you will have to promote some of your followers to take care of leadership
+          responsibilities for you. But choose carefully, once your followers have had a taste of power, they might not
+          want to give it up again.</br>
+          As the follower, it is your responsibility to contribute to your leader’s success. Fulfil the tasks your
+          leader gives you, be a good follower, and eventually you will see the movement flourish. Or maybe you would
+          like to take control for yourself? Rise through the ranks of your movement, gain power for yourself, and you
+          might just be able to do it.
+
+        </p>
+      </div>
+
+      <div class="gallery-wrap">
+        <h1>The 14 Signs of Fascism</h1>
+        <p class="gallery-description">When researching fascism, there is no way around the 14 signs of fascism as
+          defined by Umberto Eco.
+          During the design process of Rise of Ravens, this list has always been a good resource to turn to and draw
+          inspiration from.
+          Below, you can read through the 14 signs, but if you want to learn more you can follow <a
+            href="https://www.openculture.com/2016/11/umberto-eco-makes-a-list-of-the-14-common-features-of-fascism.html">this
+            link</a>.
+        </p>
+        <div class="main-gallery js-flickity"
+          data-flickity-options='{ "contain": false, "wrapAround": true, "freeScroll": true }'>
+          <div class="gallery-cell">
+            <h2>1. The Cult of Tradition</h2>
+            <p>One has only to look at the syllabus of every fascist movement to find the major traditionalist thinkers.
+              The Nazi gnosis was nourished by traditionalist, syncretistic, occult elements.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>2. The Rejection of Modernism</h2>
+            <p>The Enlightenment, the Age of Reason, is seen as the beginning of modern depravity. In this sense
+              Ur-Fascism can be defined as irrationalism.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>3. The Cult of Action for Action's Sake</h2>
+            <p>Action being beautiful in itself, it must be taken before, or without, any previous reflection. Thinking
+              is a form of emasculation.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>4. Disagreement is Treason</h2>
+            <p>The critical spirit makes distinctions, and to distinguish is a sign of modernism. In modern culture the
+              scientific community praises disagreement as a way to improve knowledge.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>5. Fear of Difference</h2>
+            <p>The first appeal of a fascist or prematurely fascist movement is an appeal against the intruders. Thus
+              Ur-Fascism is racist by definition.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>6. Appeal to Social Frustration.</h2>
+            <p>One of the most typical features of the historical fascism was the appeal to a frustrated middle class, a
+              class suffering from an economic crisis or feelings of political humiliation, and frightened by the
+              pressure of lower social groups.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>7. The Obsession with a Plot</h2>
+            <p>Thus at the root of the Ur-Fascist psychology there is the obsession with a plot, possibly an
+              international one. The followers must feel besieged.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>8. The Enemy is both Strong and Weak</h2>
+            <p>By a continuous shifting of rhetorical focus, the enemies are at the same time too strong and too weak.
+            </p>
+          </div>
+          <div class="gallery-cell">
+            <h2>9. Pacifism is Trafficking with the Enemy</h2>
+            <p>For Ur-Fascism there is no struggle for life but, rather, life is lived for struggle.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>10. Contempt for the Weak</h2>
+            <p>Elitism is a typical aspect of any reactionary ideology.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>11. Everybody is Educated to become a Hero</h2>
+            <p>In Ur-Fascist ideology, heroism is the norm. This cult of heroism is strictly linked with the cult of
+              death.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>12. Machismo and Weaponry</h2>
+            <p>Machismo implies both disdain for women and intolerance and condemnation of nonstandard sexual habits,
+              from chastity to homosexuality.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>13. Selective Populism</h2>
+            <p>There is in our future a TV or Internet populism, in which the emotional response of a selected group of
+              citizens can be presented and accepted as the Voice of the People.</p>
+          </div>
+          <div class="gallery-cell">
+            <h2>14. Ur-Fascism speaks Newspeak</h2>
+            <p>All the Nazi or Fascist schoolbooks made use of an impoverished vocabulary, and an elementary syntax, in
+              order to limit the instruments for complex and critical reasoning.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h1>Game Design</h1>
+        <img src="img/use_case_diagram.png" alt="Diagram" class="responsive-image">
+        <p>Above, you can see a rough sketch of the basic gameplay loop, wherein the leader has to manage their resources
+          and followers to accomplish their task, finish his projects, and react to world events. However, as the movement
+          grows, so does the number of things to manage. To help in this task, the leader can promote some of their
+          followers, essentially making them leaders of their own, smaller subregions.</p>
+
+        <h2>Leader View</h2>
+        <p>The leader has to keep track of and manage a lot of things. Below is an example of what the UI looks like,
+          including a world event (circle) a project (hexagon) as well as their associated tasks. To the right is a
+          list of all the followers currently available to the leader. At the top left of the screen are the three key
+          resources: influence, which indicates how much traction the movement is getting; public opinion, which
+          indicates how well liked the leader currently is; and finally money, which is needed to fund all sorts of
+          things, from items to projects. </p>
+        <img src="img/strategy_hud_followers_expanded.png" alt="Strategy View" class="responsive-image">
+
+        <h2>Follower View</h2>
+        <p>Not every task has to end in conflict. But if it does, followers need to make sure they can come out
+          successfully. Combat happens in a tactical turn-based system where the follower draws cards to decide what
+          course of action they take. Below, you can see an example of such a scene and an example of what a level might
+          look like.</p>
+        <img src="img/tactics_preview1.png" alt="Tactics View1" class="responsive-image">
+
+        <h2>Level Design</h2>
+        <img src="img/tactics_preview2.png" alt="Tactics View2" class="responsive-image">
+      </div>
+
+      <div class="card">
+        <h1>Moodboard</h1>
+        <img src="img/moodboard.png" alt="Moodboard" class="responsive-image">
+        <p>Red has been chosen as the main color because it invokes strong emotions. In a video game context, red
+          often symbolizes enemies. In our case, your color is red. . . </p>
+      </div>
+
+      <div class="card">
+        <h1>The Logo</h1>
+        <p>Here you can see a few iterations of the logo before we settled on the final design.</p>
+        <div class="img-flex">
+          <img src="img/logos/sketch1.png" alt="Sketch 1" class="flex-img-small">
+          <img src="img/logos/sketch2.png" alt="Sketch 2" class="flex-img-small">
+          <img src="img/logos/sketch3.png" alt="Sketch 3" class="flex-img-small">
+          <img src="img/logos/sketch4.png" alt="Sketch 4" class="flex-img-small">
+          <img src="img/logos/sketch5.png" alt="Sketch 5" class="flex-img-small">
+        </div>
+        <p>And below, the final version.</p>
+        <img src="img/ravens_logo_transparent.png" alt="Ravens Logo" class="flex-img-small">
+        <p>The Raven was chosen because it is commonly associated with intelligence and cunning, suvival, community, but
+          also danger/warning. Furthermore, the raven as a symbol harkens back to the nordic myths. Perfect for a
+          traditionalist movement.</p>
+      </div>
+
+
+      <!-- <h2 class="action"><a href="game/game.html">Try the Game</a></h2> -->
+    </div>
+
+    <footer class="footer">
+      <h2>Want to join the Ravens?</h2>
+      <a href="https://www.instagram.com/rise_of_ravens/" class="fa fa-instagram fa-2x icon-3d"></a>
+    </footer>
+  </main>
+</body>
+
+</html>
