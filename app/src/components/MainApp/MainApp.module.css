@@ -1,0 +1,31 @@
+.dashboard {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.sidebar {
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+}
+
+.content {
+  background-color: var(--clr-gray-800);
+}
+
+.invite {
+  margin-top: auto;
+}
+
+.chatBtn {
+  position: absolute;
+  top: var(--gap-2);
+  right: var(--gap-2);
+
+  text-transform: uppercase;
+}

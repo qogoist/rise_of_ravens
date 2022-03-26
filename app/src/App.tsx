@@ -1,12 +1,14 @@
+import { BrowserRouter } from "react-router-dom";
 import styles from "./App.module.css";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
+import Dashboard from "./components/MainApp";
 
 function App() {
   return (
-    <div className={styles.main}>
-      <Login />
-    </div>
+    <BrowserRouter>
+      <div className={styles.main}>
+        <Dashboard />
+      </div>
+    </BrowserRouter>
   );
 }
 
