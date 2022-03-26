@@ -1,6 +1,53 @@
-.main {
-  background-color: #000000;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+:root {
+  --clr-primary: #f90409;
+
+  --clr-gray-000: #ffffff;
+  --clr-gray-100: #e4e2e2;
+  --clr-gray-300: #696868;
+  --clr-gray-400: #4e4e4e;
+  --clr-gray-500: #484848;
+  --clr-gray-800: #1c1c1c;
+  --clr-gray-1000: #000000;
+
+  --clr-bg: var(--clr-gray-1000);
+
+  --font-display: "Made Future";
+  --font-main: "Roboto", sans-serif;
+
+  --fw-light: 300;
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-small: 0.8rem;
+  --fs-normal: 1rem;
+  --fs-100: 1.1rem;
+  --fs-250: 1.25rem;
+  --fs-500: 1.5rem;
+
+  --ts-speed-1: 1000ms;
+  --ts-speed-2: 750ms;
+  --ts-speed-3: 500ms;
+  --ts-speed-4: 250ms;
+
+  --single-column-width: clamp(20%, 30rem, 100%);
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: var(--fw-regular);
+
+  color: var(--clr-gray-100);
+  background-color: var(--clr-bg);
+}
+
+.main {
   width: 100vw;
   height: 100vh;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

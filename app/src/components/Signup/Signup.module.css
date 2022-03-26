@@ -1,0 +1,33 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 5rem;
+
+  margin: auto 0;
+}
+
+.signup {
+  width: var(--single-column-width);
+  padding: 3rem;
+
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "profile gallery gallery"
+    "form form form"
+    "form form form";
+}
+
+.signup .profile {
+  grid-area: profile;
+}
+
+.signup .gallery {
+  grid-area: gallery;
+}
+
+.signup .form {
+  grid-area: form;
+}

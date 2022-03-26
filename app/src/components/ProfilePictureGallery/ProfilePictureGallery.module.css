@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "img1 img2 img3 img4"
+    "upload upload upload upload";
+}
+
+.container > .btn {
+  grid-area: upload;
+
+  font-weight: var(--fw-light);
+}

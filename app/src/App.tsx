@@ -1,10 +1,11 @@
 import styles from "./App.module.css";
-import Logo from "./components/Logo";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 function App() {
   return (
     <div className={styles.main}>
-      <Logo />
+      <Login />
     </div>
   );
 }

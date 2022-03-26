@@ -1,0 +1,10 @@
+.card {
+  background-color: var(--clr-gray-800);
+
+  padding: 1rem 1.5rem;
+}
+
+.card > h2 {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-light);
+}
