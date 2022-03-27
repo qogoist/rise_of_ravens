@@ -2,12 +2,14 @@
 
 :root {
   --clr-primary: #f90409;
+  --clr-primary-dark: #801d1f;
 
   --clr-gray-000: #ffffff;
   --clr-gray-100: #e4e2e2;
+  --clr-gray-200: #d7d4d4;
   --clr-gray-300: #696868;
   --clr-gray-400: #4e4e4e;
-  --clr-gray-500: #484848;
+  --clr-gray-500: #2f2f2f;
   --clr-gray-800: #1c1c1c;
   --clr-gray-1000: #000000;
 
@@ -55,8 +57,4 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-a.active {
-  color: var(--clr-primary);
 }

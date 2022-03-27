@@ -1,0 +1,24 @@
+.bubble {
+  position: absolute;
+  width: 1.5em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+
+  background-color: var(--clr-primary);
+}
+
+[data-position^="top-"] {
+  top: -0.5em;
+}
+[data-position^="bottom-"] {
+  bottom: -0.5em;
+}
+[data-position$="-left"] {
+  left: -0.5em;
+}
+[data-position$="-right"] {
+  right: -0.5em;
+}

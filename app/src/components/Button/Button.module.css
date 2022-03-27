@@ -5,6 +5,8 @@
   width: fit-content;
   padding: 1em 2em;
 
+  cursor: pointer;
+
   transition: background-color var(--ts-speed-4) ease-in-out;
 }
 
@@ -14,14 +16,14 @@
 }
 
 .link {
-  text-decoration: underline;
-  text-decoration-color: transparent;
+  --translate: 0, 0;
+  cursor: pointer;
 
   transition: var(--ts-speed-4) ease-in-out;
   transform-origin: left bottom;
 }
 
 .link:hover {
-  text-decoration-color: inherit;
-  transform: scale(1.05);
+  color: var(--clr-gray-000);
+  transform: scale(1.05) translate(var(--translate));
 }

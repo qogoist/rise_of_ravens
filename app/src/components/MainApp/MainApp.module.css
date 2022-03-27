@@ -2,11 +2,16 @@
   height: 100%;
   width: 100%;
 
+  overflow: hidden;
+
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: auto 5fr auto;
+  grid-template-areas: "sidebar content chat";
 }
 
 .sidebar {
+  grid-area: sidebar;
+  max-width: min-content;
   padding: 2rem;
 
   display: flex;
@@ -16,16 +21,45 @@
 
 .content {
   background-color: var(--clr-gray-800);
+
+  grid-area: content-start / content-start / chat-end / chat-end;
 }
 
 .invite {
   margin-top: auto;
+  width: max-content;
+}
+
+.chat {
+  position: relative;
+  width: 50ch;
+  padding: 2rem;
+
+  grid-area: chat;
+
+  background-color: var(--clr-bg);
+
+  transform: translateX(100%);
+  transition: var(--ts-speed-3) ease-in-out;
+}
+
+.chat.open {
+  transform: translateX(0);
+}
+
+.chat.open > .chatBtn {
+  --translate: 2rem, 0;
 }
 
 .chatBtn {
   position: absolute;
   top: var(--gap-2);
-  right: var(--gap-2);
+  left: 0;
 
+  font-size: var(--fs-250);
   text-transform: uppercase;
+
+  --translate: calc(-100% - 2rem), 0;
+  transform: translate(var(--translate));
+  transition: var(--ts-speed-3) ease-in-out;
 }
