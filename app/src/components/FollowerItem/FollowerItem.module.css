@@ -31,6 +31,7 @@
   grid-area: name;
   place-self: center start;
   position: relative;
+  width: 100%;
 }
 
 .container.active > .icon {
