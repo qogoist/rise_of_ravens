@@ -45,9 +45,21 @@
 body {
   font-family: var(--font-main);
   font-weight: var(--fw-regular);
+  line-height: 1.5;
+  word-spacing: 0.25ch;
 
   color: var(--clr-gray-100);
   background-color: var(--clr-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  word-spacing: normal;
 }
 
 .main {
@@ -57,4 +69,15 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--clr-gray-300);
+}
+*::-webkit-scrollbar-track {
+  background: var(--clr-gray-500);
 }
