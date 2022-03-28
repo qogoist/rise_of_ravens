@@ -1,6 +1,7 @@
 import React from "react";
 import ChatInput from "../ChatInput";
 import NewsFeed from "../NewsFeed";
+import PageHeader from "../PageHeader";
 import styles from "./Home.module.css";
 
 type Props = {};
@@ -46,7 +47,7 @@ const placeholderArticles = [
 const Home: React.FC<Props> = ({}) => {
   return (
     <div className={styles.container}>
-      <h1>News Feed</h1>
+      <PageHeader>News Feed</PageHeader>
       <NewsFeed articles={placeholderArticles} />
       <ChatInput />
     </div>

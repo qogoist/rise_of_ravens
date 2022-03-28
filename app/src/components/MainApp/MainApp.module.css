@@ -20,6 +20,8 @@
 }
 
 .content {
+  padding: 2rem;
+
   background-color: var(--clr-gray-800);
 
   grid-area: content-start / content-start / chat-end / chat-end;
