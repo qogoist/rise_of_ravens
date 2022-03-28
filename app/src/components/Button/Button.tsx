@@ -6,7 +6,7 @@ type Props = {
   className?: string;
   btnType?: "button" | "link";
   type?: "button" | "submit" | "reset" | undefined;
-  onClick?: () => void;
+  onClick?: (...args: any[]) => void;
 };
 
 const Button: React.FC<Props> = ({

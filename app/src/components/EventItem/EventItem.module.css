@@ -1,0 +1,16 @@
+.event {
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  font-size: var(--fs-100);
+
+  background-color: var(--clr-gray-250);
+}
+
+.event:hover {
+  background-color: var(--clr-primary);
+}
+
+.event.active {
+  background: var(--clr-primary-dark);
+}

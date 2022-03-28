@@ -15,3 +15,29 @@ type Article = {
   poster: string;
   likes: number;
 };
+
+type Categories = {
+  type: "events" | "projects";
+  display: string;
+};
+
+type ListItem = WorldEvent | Task | Follower;
+type ListItemTypes = "WorldEvent" | "Task" | "Follower";
+
+type WorldEvent = {
+  name: string;
+  description: string;
+  tasks: Task[];
+};
+
+type Task = {
+  name: string;
+  description: string;
+  participants: Follower[];
+};
+
+type Follower = {
+  name: string;
+  rank: string;
+  image: string;
+};

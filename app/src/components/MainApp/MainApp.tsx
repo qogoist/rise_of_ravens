@@ -25,7 +25,7 @@ const MainApp: React.FC<Props> = ({}) => {
       <div className={styles.content}>
         <Routes>
           <Route path="/*" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/project" element={<Project />} />
           <Route path="/studio" element={<DesignStudio />} />
         </Routes>

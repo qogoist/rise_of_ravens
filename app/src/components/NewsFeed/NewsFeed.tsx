@@ -10,7 +10,7 @@ const NewsFeed: React.FC<Props> = ({ articles }) => {
   return (
     <div className={styles.container}>
       {articles.map((article, index) => {
-        return <Article article={article} />;
+        return <Article key={index} article={article} />;
       })}
     </div>
   );

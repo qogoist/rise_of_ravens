@@ -2,11 +2,12 @@
 
 :root {
   --clr-primary: #f90409;
-  --clr-primary-dark: #801d1f;
+  --clr-primary-dark: #8e1717;
 
   --clr-gray-000: #ffffff;
   --clr-gray-100: #e4e2e2;
   --clr-gray-200: #d7d4d4;
+  --clr-gray-250: #888888;
   --clr-gray-300: #696868;
   --clr-gray-400: #4e4e4e;
   --clr-gray-500: #2f2f2f;
