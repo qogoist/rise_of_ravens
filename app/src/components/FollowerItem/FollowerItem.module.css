@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "icon name"
+    "content content";
+
+  cursor: pointer;
+  background-color: var(--clr-gray-250);
+}
+
+.container:hover {
+  background-color: var(--clr-gray-300);
+}
+
+.container > .icon {
+  grid-area: icon;
+  max-width: 30px;
+  margin-right: 0.5rem;
+}
+
+.container > p {
+  grid-area: content;
+  font-size: var(--fs-small);
+}
+
+.container > h4 {
+  grid-area: name;
+  place-self: center start;
+  position: relative;
+  width: 100%;
+}
+
+.container.active > .icon {
+  margin-bottom: 0.5rem;
+}
+
+.container > h4::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: -0.25em;
+
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: var(--ts-speed-4) ease-in-out;
+
+  background-color: var(--clr-primary-dark);
+}
+
+.container.active > h4::after {
+  transform: scale(1, 1);
+}

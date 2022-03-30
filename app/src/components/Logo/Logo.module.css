@@ -1,0 +1,5 @@
+.logo {
+  color: var(--clr-primary);
+  font-family: var(--font-display);
+  text-shadow: 0.1em 0.1em 0.25em var(--clr-primary);
+}

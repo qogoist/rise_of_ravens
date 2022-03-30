@@ -1,0 +1,11 @@
+.input {
+  background-color: var(--clr-gray-300);
+
+  width: 100%;
+
+  padding: var(--padding, 0.25em);
+}
+
+.input::placeholder {
+  color: var(--clr-gray-200);
+}

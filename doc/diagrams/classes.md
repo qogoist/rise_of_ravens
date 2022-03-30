@@ -1,60 +1,81 @@
 ```mermaid
 classDiagram
+  direction TB
+
 %% Classes
-    class World_Event {
-      +String : Name
-      +String : Description
-      +Int : Public_Opinion_Rating
-      +Int : Timer
-      +Task[]: Tasks
-      +Task : Active_Task
-      +Task : Resolved_By
-      +Outcome : Outcome
-    }
+  class Event {
+    <<abstract>>
+    +String : Name
+    +String : Description
+    +Task[] : Tasks
+    +Task : Active_Task
+    +Task : Resolved_By
+    +PosOutcome : Outcome
+    +NegOutcome : Outcome
+  }
 
-    class Project {
-      +String : Name
-      +String : Description
-      +Int : Cost
-      +Task[] : Tasks
-      +Task : Active_Task
-      +Outcome : Outcome
-    }
+  class World_Event {
+    +Int : Public_Opinion_Rating
+    +Int : Timer
+  }
 
-    class Task {
-      +String : Name
-      +String : Description
-      +TaskType : Type
-      +Int : Difficulty
-      +Follower[]: Followers
-      +Outcome : Outcome
-    }
+  class Project {
+    +Int : Cost
+  }
 
-    class Outcome {
-      +Int : ΔMoney
-      +Int : ΔPublic_Opinion
-      +Int : ΔInfluence
-      +Utility[] : Utilities
+  class Task {
+    +String : Name
+    +String : Description
+    +TaskType : Type
+    +Int : Difficulty
+    +PlayerCharacter[]: Participants
+    +PosOutcome : Outcome
+    +NegOutcome : Outcome
+  }
 
-      +applyChange() void
-    }
+  class Outcome {
+    +Int : ΔMoney
+    +Int : ΔPublic_Opinion
+    +Int : ΔInfluence
+    +Utility[] : Utilities
 
-    class TaskType {
-      <<enumeration>>
-      INFORMATION
-      SUBTERFUGE
-      PROPAGANDA
-      VIOLENCE
-      MENIAL
-    }
+    +applyChange() void
+  }
+
+  class Player {
+    +String : ID
+    +String : Mail
+    +String : Password
+    +PlayerCharacter : Character
+  }
+
+  class PlayerCharacter {
+    +String : Name
+    +Rank : Rank
+  }
+
+
+%% Generics Enums and such
+  class TaskType {
+    <<enumeration>>
+    INFORMATION
+    SUBTERFUGE
+    PROPAGANDA
+    VIOLENCE
+    MENIAL
+  }
 
 %% Relationships go here
-  World_Event --o "1" Outcome
-  Project --o "1" Outcome
-  Task --o "1" Outcome
+  Project --|> Event
+  World_Event --|> Event
 
-  World_Event "1" --o "1..n" Task : contains
-  Project "1" --o "1..n" Task : contains
+  Outcome "2" --* "1..n" Event
 
+  Task "1...n" --o "1..n" Event
+
+  PlayerCharacter --* "1" Player
+  PlayerCharacter "0..n" --o "0..n" Task
+
+  TaskType "1..n" --o "1..n" Task : Defines type of
 
 ```

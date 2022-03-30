@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-height: 100vh;
+  margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+
+.chat {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+
+.chat + button {
+  display: none;
+}
+
+.chat h2 {
+  font-size: var(--fs-250);
+  text-transform: uppercase;
+}
+
+.chat h2::before {
+  content: "\25C0";
+  margin-right: 0.5em;
+}
+
+.chat h2::before {
+  text-decoration: none;
+}

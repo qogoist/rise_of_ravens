@@ -1,0 +1,24 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: var(--gap-4);
+
+  margin: auto 0;
+}
+
+.login {
+  width: var(--single-column-width);
+  padding: 3rem;
+
+  display: grid;
+  gap: var(--gap-3);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "form form form"
+    "form form form";
+}
+
+.login .form {
+  grid-area: form;
+}

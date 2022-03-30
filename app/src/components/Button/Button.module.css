@@ -1,0 +1,29 @@
+.btn {
+  background-color: var(--clr-gray-400);
+  color: var(--clr-gray-000);
+
+  width: fit-content;
+  padding: 1em 2em;
+
+  cursor: pointer;
+
+  transition: background-color var(--ts-speed-4) ease-in-out;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--clr-gray-1000);
+}
+
+.link {
+  --translate: 0, 0;
+  cursor: pointer;
+
+  transition: var(--ts-speed-4) ease-in-out;
+  transform-origin: left bottom;
+}
+
+.link:hover {
+  color: var(--clr-gray-000);
+  transform: scale(1.05) translate(var(--translate));
+}

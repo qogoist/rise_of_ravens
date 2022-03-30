@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  padding: 0.25rem;
+  margin-top: auto;
+
+  background-color: var(--clr-gray-300);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.send {
+  padding: 0.5em 1em;
+
+  background-color: var(--clr-gray-500);
+
+  font-size: var(--fs-small);
+}

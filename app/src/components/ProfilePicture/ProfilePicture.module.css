@@ -1,0 +1,15 @@
+.container {
+  padding: 0;
+  aspect-ratio: 1;
+}
+
+.container.round {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.container > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

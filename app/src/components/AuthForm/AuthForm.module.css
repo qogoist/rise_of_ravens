@@ -1,0 +1,13 @@
+.auth {
+  width: 100%;
+  --padding: 0.25em;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap-1) + 2 * var(--padding));
+}
+
+.auth > button {
+  align-self: end;
+
+  font-size: var(--fs-250);
+}

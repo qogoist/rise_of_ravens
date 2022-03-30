@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  height: 3rem;
+  width: 100%;
+  padding: 0.25rem;
+
+  display: flex;
+  align-content: center;
+  gap: var(--gap-1);
+
+  background-color: var(--clr-gray-500);
+}
+
+.container > h3 {
+  margin: auto 0;
+}

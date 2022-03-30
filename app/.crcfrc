@@ -1,0 +1,9 @@
+[
+  "typescript",
+  "cssmodules",
+  "notest",
+  "functional",
+  {
+    "output": "src/components"
+  }
+]
