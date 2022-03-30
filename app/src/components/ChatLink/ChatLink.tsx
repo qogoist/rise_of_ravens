@@ -15,8 +15,10 @@ const ChatLink: React.FC<Props> = ({ name, notification, onClick }) => {
     <Button onClick={onClick} className={styles.container}>
       <ProfilePicture round={true} fill="#801d1f" />
       <h3>{name}</h3>
-      {notification && (
+      {notification ? (
         <NotificationBubble position="top-right" content={notification.toString()} />
+      ) : (
+        <></>
       )}
     </Button>
   );

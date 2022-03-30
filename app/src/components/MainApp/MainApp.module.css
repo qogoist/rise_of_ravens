@@ -20,10 +20,9 @@
 }
 
 .content {
+  position: relative;
   max-height: 100vh;
   padding: 2rem;
-
-  background-color: var(--clr-gray-800);
 
   grid-area: content-start / content-start / chat-end / chat-end;
 }
@@ -40,7 +39,7 @@
 
   grid-area: chat;
 
-  background-color: var(--clr-bg);
+  background-color: #000000dd;
 
   transform: translateX(100%);
   transition: var(--ts-speed-3) ease-in-out;

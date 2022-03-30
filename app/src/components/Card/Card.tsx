@@ -8,7 +8,7 @@ type Props = {
 
 const Card: React.FC<Props> = ({ children, className, type }) => {
   return (
-    <div data-type={type} className={styles.card + " " + className}>
+    <div data-type={type} className={`${styles.card} ${className ? className : ""}`}>
       {children}
     </div>
   );

@@ -16,12 +16,15 @@
 
   --clr-bg: var(--clr-gray-1000);
 
-  --font-display: "Made Future";
-  --font-main: "Roboto", sans-serif;
+  --font-display: "Made Future Header";
+  --font-main: "Made Future";
 
+  --fw-line: 100;
+  --fw-lighter: 200;
   --fw-light: 300;
   --fw-regular: 500;
   --fw-bold: 700;
+  --fw-bolder: 800;
   --fw-black: 900;
 
   --fs-small: 0.8rem;

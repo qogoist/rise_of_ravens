@@ -1,11 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Button from "../Button";
 import Chatrooms from "../Chatrooms";
 import Dashboard from "../Dashboard";
 import DesignStudio from "../DesignStudio";
+import FormInput from "../FormInput";
 import Home from "../Home";
+import InviteModal from "../InviteModal";
+import Modal from "../Modal";
 import Navigation from "../Navigation";
+import NotificationBubble from "../NotificationBubble";
 import ProfileInfo from "../ProfileInfo";
 import Project from "../Project";
 import styles from "./MainApp.module.css";
@@ -13,6 +17,8 @@ import styles from "./MainApp.module.css";
 type Props = {};
 
 const MainApp: React.FC<Props> = ({}) => {
+  const [notifications, setNotifications] = useState<boolean>(true);
+  const [invite, setInvite] = useState<boolean>(false);
   const chat = useRef<HTMLDivElement>(null);
 
   return (
@@ -20,9 +26,12 @@ const MainApp: React.FC<Props> = ({}) => {
       <div className={styles.sidebar}>
         <ProfileInfo />
         <Navigation />
-        <Button className={styles.invite}>Freunde Einladen</Button>
+        <Button className={styles.invite} onClick={() => setInvite(true)}>
+          Freunde Einladen
+        </Button>
       </div>
       <div className={styles.content}>
+        <InviteModal show={invite} onClose={() => setInvite(false)} />
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
@@ -37,9 +46,11 @@ const MainApp: React.FC<Props> = ({}) => {
           btnType="link"
           onClick={() => {
             chat.current?.classList.toggle(styles.open);
+            setNotifications(false);
           }}
         >
           Chatroom
+          {notifications && <NotificationBubble content="!" position="before" size="small" />}
         </Button>
       </div>
     </div>

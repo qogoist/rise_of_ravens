@@ -1,6 +1,41 @@
 @font-face {
+  font-family: "Made Future Header";
+  src: url("../fonts/MADE\ Future\ X\ HEADER\ Regular\ PERSONAL\ USE.otf");
+}
+@font-face {
   font-family: "Made Future";
-  src: url("../fonts/MADEFutureXHEADERLight.otf");
+  src: url("../fonts/MADE\ Future\ X\ Black\ PERSONAL\ USE.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Made Future";
+  src: url("../fonts/MADE\ Future\ X\ Bold\ PERSONAL\ USE.otf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Made Future";
+  src: url("../fonts/MADE\ Future\ X\ Medium\ PERSONAL\ USE.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Made Future";
+  src: url("../fonts/MADE\ Future\ X\ Regular\ PERSONAL\ USE.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Made Future";
+  src: url("../fonts/MADE\ Future\ X\ Light\ PERSONAL\ USE.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Made Future";
+  src: url("../fonts/MADE\ Future\ X\ HEADER\ Thin\ PERSONAL\ USE.otf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Made Future";
+  src: url("../fonts/MADE\ Future\ X\ Line\ PERSONAL\ USE.otf");
+  font-weight: 100;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  place-content: center;
+
+  aspect-ratio: 1;
+  height: 1em;
+}
+
+.container > svg {
+  display: block;
+  fill: currentColor;
+  stroke: currentColor;
+  height: 100%;
+  width: 100%;
+  stroke-width: 3;
+}

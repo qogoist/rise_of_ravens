@@ -7,6 +7,7 @@ type ChatData = {
   name: string;
   members: string[];
   messages: ChatMessage[];
+  unread: number;
 };
 
 type Article = {

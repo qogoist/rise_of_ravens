@@ -3,3 +3,7 @@
   font-family: var(--font-display);
   text-shadow: 0.1em 0.1em 0.25em var(--clr-primary);
 }
+
+[data-size="small"] {
+  font-size: var(--fs-500);
+}

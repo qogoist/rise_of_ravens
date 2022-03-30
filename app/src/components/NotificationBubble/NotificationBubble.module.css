@@ -7,6 +7,7 @@
   display: grid;
   place-content: center;
 
+  font-size: 1em;
   background-color: var(--clr-primary);
 }
 
@@ -21,4 +22,14 @@
 }
 [data-position$="-right"] {
   right: -0.5em;
+}
+[data-position="before"] {
+  left: 0;
+  top: 50%;
+  transform: translate(-125%, -50%);
+}
+
+[data-size="small"] {
+  width: 1em;
+  font-size: 1em;
 }

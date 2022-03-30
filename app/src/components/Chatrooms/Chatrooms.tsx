@@ -7,65 +7,65 @@ import ChatHistory from "../ChatHistory";
 
 type Props = {};
 
+let placeholderChats: ChatData[] = [
+  {
+    name: "Rise of Ravens",
+    members: ["Member 1", "Member 2", "Max"],
+    messages: [
+      {
+        sender: "Member 1",
+        content:
+          "asdl jiasjdl iasjd laisjd laid jlsaidajsdal siu gflsaudh gasldugih asliuv hcalviuahsclaiuvh ilasv liausv ",
+      },
+      { sender: "Member 1", content: "WOWLWWOSLAOSD" },
+      { sender: "Member 1", content: "WOWLWWOSLAOSD" },
+      { sender: "Member 1", content: "WOWLWWOSLAOSD" },
+    ],
+    unread: 9,
+  },
+  {
+    name: "Admin Channel",
+    members: ["Member 1", "Member 2", "Max"],
+    messages: [],
+    unread: 0,
+  },
+  {
+    name: "Oberstabsgefreite",
+    members: ["Member 1", "Member 2", "Max"],
+    messages: [],
+    unread: 0,
+  },
+  {
+    name: "Memes",
+    members: ["Member 1", "Member 2", "Max"],
+    messages: [],
+    unread: 5,
+  },
+];
+
 const Chatrooms: React.FC<Props> = ({}) => {
   const [chat, setChat] = useState<ChatData | null>(null);
 
   //TODO: Fetch relevant Chat Data :smile:
 
+  const handleChatClick = (chat: ChatData) => {
+    setChat(chat);
+    chat.unread = 0;
+  };
+
   if (!chat)
     return (
       <div className={styles.container}>
-        <ChatLink
-          onClick={() =>
-            setChat({
-              name: "Rise of Ravens",
-              members: ["Member 1", "Member 2", "Max"],
-              messages: [
-                {
-                  sender: "Member 1",
-                  content:
-                    "asdl jiasjdl iasjd laisjd laid jlsaidajsdal siu gflsaudh gasldugih asliuv hcalviuahsclaiuvh ilasv liausv ",
-                },
-                { sender: "Member 1", content: "WOWLWWOSLAOSD" },
-                { sender: "Member 1", content: "WOWLWWOSLAOSD" },
-                { sender: "Member 1", content: "WOWLWWOSLAOSD" },
-              ],
-            })
-          }
-          name="Rise of Ravens"
-          notification={1}
-        />
-        <ChatLink
-          onClick={() =>
-            setChat({
-              name: "Admin Channel",
-              members: ["Member 1", "Member 2", "Max"],
-              messages: [],
-            })
-          }
-          name="Admin Channel"
-        />
-        <ChatLink
-          onClick={() =>
-            setChat({
-              name: "Oberstabsgefreite",
-              members: ["Member 1", "Member 2", "Max"],
-              messages: [],
-            })
-          }
-          name="Oberstabsgefreite"
-        />
-        <ChatLink
-          onClick={() =>
-            setChat({
-              name: "Memes",
-              members: ["Member 1", "Member 2", "Max"],
-              messages: [],
-            })
-          }
-          name="Memes"
-          notification={9}
-        />
+        {placeholderChats.map((chat, index) => {
+          return (
+            <ChatLink
+              key={index}
+              name={chat.name}
+              notification={chat.unread}
+              onClick={() => handleChatClick(chat)}
+            />
+          );
+        })}
       </div>
     );
   else

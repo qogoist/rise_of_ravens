@@ -1,0 +1,41 @@
+.backdrop {
+  position: absolute;
+  inset: 0;
+
+  background-color: #00000066;
+  backdrop-filter: blur(2px) brightness(1.5);
+  z-index: 10;
+
+  display: grid;
+  place-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop[data-show="true"] {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title close"
+    "content content";
+}
+
+.modal > h3 {
+  grid-area: title;
+}
+
+.modal > button {
+  grid-area: close;
+  place-self: start end;
+  font-size: var(--fs-100);
+}
+
+.modal > .content {
+  grid-area: content;
+}
