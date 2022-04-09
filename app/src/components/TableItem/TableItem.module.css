@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  gap: var(--gap-1);
+}
+
+.container > p {
+  padding: 0.5em 1em;
+}
+
+.heading {
+  margin-bottom: 0.5rem;
+  background-color: var(--clr-primary-dark);
+}
+
+.item {
+  background-color: var(--clr-gray-250);
+}

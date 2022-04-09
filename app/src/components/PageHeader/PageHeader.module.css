@@ -1,5 +1,7 @@
 .title {
   position: relative;
+  margin-bottom: var(--gap-1);
+
   font-size: var(--fs-250);
   text-transform: uppercase;
 }

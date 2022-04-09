@@ -18,7 +18,7 @@ type Article = {
 };
 
 type Categories = {
-  type: "events" | "projects";
+  type: "events" | "projects" | "follower";
   display: string;
 };
 
@@ -40,5 +40,10 @@ type Task = {
 type Follower = {
   name: string;
   rank: string;
+  title: string;
   image: string;
+  influence: number;
+  currentTask: Task | null;
+  tasks: Task[];
+  activeSince: Date;
 };

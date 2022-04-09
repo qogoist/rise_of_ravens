@@ -1,15 +1,21 @@
 import React from "react";
 import styles from "./ProfileInfo.module.css";
 import ProfilePicture from "../ProfilePicture";
+import { NavLink } from "react-router-dom";
 
 type Props = {};
 
 const ProfileInfo: React.FC<Props> = ({}) => {
   return (
-    <div className={styles.container}>
+    <NavLink
+      to={"/profile"}
+      className={({ isActive }) =>
+        isActive ? styles.active + " " + styles.container : styles.container
+      }
+    >
       <ProfilePicture className={styles.img} />
       <p>Max Mustermann</p>
-    </div>
+    </NavLink>
   );
 };
 

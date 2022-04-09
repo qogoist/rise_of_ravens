@@ -10,6 +10,7 @@ import InviteModal from "../InviteModal";
 import Modal from "../Modal";
 import Navigation from "../Navigation";
 import NotificationBubble from "../NotificationBubble";
+import PlayerProfile from "../PlayerProfile";
 import ProfileInfo from "../ProfileInfo";
 import Project from "../Project";
 import styles from "./MainApp.module.css";
@@ -37,6 +38,7 @@ const MainApp: React.FC<Props> = ({}) => {
           <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/project" element={<Project />} />
           <Route path="/studio" element={<DesignStudio />} />
+          <Route path="/profile" element={<PlayerProfile />} />
         </Routes>
       </div>
       <div className={styles.chat} ref={chat}>

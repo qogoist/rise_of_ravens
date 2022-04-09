@@ -8,7 +8,7 @@ const Navigation: React.FC<Props> = ({}) => {
   return (
     <ul className={styles.nav}>
       <NavItem path="/">Home</NavItem>
-      <NavItem path="/dashboard/events">Dashboard</NavItem>
+      <NavItem path="/dashboard">Dashboard</NavItem>
       <NavItem path="/project">Projekt</NavItem>
       <NavItem path="/studio">Design Studio</NavItem>
     </ul>
