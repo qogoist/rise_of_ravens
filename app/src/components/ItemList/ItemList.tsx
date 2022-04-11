@@ -14,16 +14,7 @@ type Props = {
 const ItemList: React.FC<Props> = ({ items, type, active, onClick }) => {
   const list = useRef<HTMLDivElement>(null);
 
-  const toggleClass = (element: HTMLElement) => {
-    for (let child of list.current!.children) {
-      if (child.classList.contains(styles.active)) child.classList.toggle(styles.active);
-    }
-
-    element.classList.toggle(styles.active);
-  };
-
   const handleClick = (e: React.MouseEvent<HTMLElement>, item: ListItem) => {
-    toggleClass(e.currentTarget);
     onClick!(e, item);
   };
 

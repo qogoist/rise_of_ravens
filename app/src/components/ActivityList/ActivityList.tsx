@@ -10,15 +10,15 @@ type Props = {
 const ActivityList: React.FC<Props> = ({ className, activities }) => {
   const [activeTask, setActiveTask] = useState<Task | undefined>(undefined);
 
+  const handleClick = (e: React.MouseEvent<HTMLElement>, item: ListItem) => {
+    if (activeTask != item) setActiveTask(item as Task);
+    else setActiveTask(undefined);
+  };
+
   return (
     <div className={`${styles.container} ${className ? className : ""}`}>
       <h3>Aktivitäten</h3>
-      <ItemList
-        items={activities}
-        type="Task"
-        onClick={(e: React.MouseEvent<HTMLElement>, item: ListItem) => setActiveTask(item as Task)}
-        active={activeTask}
-      />
+      <ItemList items={activities} type="Task" onClick={handleClick} active={activeTask} />
     </div>
   );
 };

@@ -16,16 +16,22 @@ const Overview: React.FC<Props> = ({ type }) => {
   const [activeFollower, setActiveFollower] = useState<Follower | undefined>(undefined);
 
   const handleEvent = (e: React.MouseEvent<HTMLElement>, item: ListItem) => {
-    setActiveEvent(item as WorldEvent);
+    if (item != activeEvent) setActiveEvent(item as WorldEvent);
+    else setActiveEvent(undefined);
+
     setActiveTask(undefined);
   };
 
   const handleTask = (e: React.MouseEvent<HTMLElement>, item: ListItem) => {
-    setActiveTask(item as Task);
+    if (item != activeTask) setActiveTask(item as Task);
+    else setActiveTask(undefined);
+
+    setActiveFollower(undefined);
   };
 
   const handleFollower = (e: React.MouseEvent<HTMLElement>, item: ListItem) => {
-    setActiveFollower(item as Follower);
+    if (item != activeFollower) setActiveFollower(item as Follower);
+    else setActiveFollower(undefined);
   };
 
   if (type.type !== "follower")
