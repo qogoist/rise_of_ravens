@@ -1,23 +1,38 @@
 export const placeholderFollower: Follower[] = [
   {
+    id: "member1ID",
     name: "Member 1",
     rank: "Oberstabsfeldwebel",
+    title: "Some Title",
+    influence: 10,
     image: "",
+    strengths: [],
     currentTask: null,
+    tasks: [],
     activeSince: new Date(2022, 2, 12),
   },
   {
+    id: "member2ID",
     name: "Member 2",
     rank: "Oberstabsfeldwebel",
+    title: "Some Title",
+    influence: 20,
     image: "",
+    strengths: [],
     currentTask: null,
+    tasks: [],
     activeSince: new Date("2022-04-07T13:00"),
   },
   {
+    id: "member3ID",
     name: "Member 3",
     rank: "Oberstabsfeldwebel",
+    title: "Some Title",
+    influence: 30,
     image: "",
+    strengths: [],
     currentTask: null,
+    tasks: [],
     activeSince: new Date(),
   },
 ];
@@ -62,11 +77,16 @@ export const placeholderEvents = [
 ];
 
 export const placeholderData: Follower = {
+  id: "selfID",
   name: "Max Mustermann",
   rank: "Some Rank",
   title: "Some Title",
   image: "",
   influence: 1234567,
+  strengths: [
+    { type: "Stärke 1", speciality: null },
+    { type: "Stärke 2", speciality: "Ausprägung XY" },
+  ],
   currentTask: null,
   tasks: placeholderTasks,
   activeSince: new Date(),

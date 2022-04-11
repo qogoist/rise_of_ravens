@@ -38,12 +38,19 @@ type Task = {
 };
 
 type Follower = {
+  id: string;
   name: string;
   rank: string;
   title: string;
   image: string;
   influence: number;
+  strengths: Strength[];
   currentTask: Task | null;
   tasks: Task[];
   activeSince: Date;
+};
+
+type Strength = {
+  type: string;
+  speciality: string | null;
 };

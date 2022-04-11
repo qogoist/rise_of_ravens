@@ -38,7 +38,9 @@ const MainApp: React.FC<Props> = ({}) => {
           <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/project" element={<Project />} />
           <Route path="/studio" element={<DesignStudio />} />
-          <Route path="/profile" element={<PlayerProfile />} />
+          <Route path="/profile" element={<PlayerProfile self={true} />}>
+            <Route path=":playerID" element={<PlayerProfile />} />
+          </Route>
         </Routes>
       </div>
       <div className={styles.chat} ref={chat}>

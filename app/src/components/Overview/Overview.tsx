@@ -82,6 +82,7 @@ const Overview: React.FC<Props> = ({ type }) => {
               follower.currentTask?.name,
               getRelativeTime(follower.activeSince),
             ]}
+            link={follower.id}
             type="item"
           />
         ))}
