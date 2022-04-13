@@ -9,13 +9,13 @@
   font-weight: var(--fw-light);
 }
 
-.card > h3 {
+.card h3 {
   position: relative;
   margin-bottom: 1em;
   font-size: var(--fs-normal);
 }
 
-.card > h3::after {
+.card h3::after {
   content: "";
   position: absolute;
   width: 100%;

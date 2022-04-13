@@ -2,8 +2,8 @@
   position: absolute;
   inset: 0;
 
-  background-color: #00000066;
-  backdrop-filter: blur(2px) brightness(1.5);
+  background-color: #ffffff02;
+  backdrop-filter: blur(5px) brightness(1.5);
   z-index: 10;
 
   display: grid;

@@ -1,8 +1,6 @@
 .event {
   width: 100%;
-  padding: 0.5rem 1rem;
-
-  font-size: var(--fs-100);
+  padding: 0.5em 1em;
 
   background-color: var(--clr-gray-250);
 }

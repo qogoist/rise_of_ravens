@@ -51,6 +51,6 @@ type Follower = {
 };
 
 type Strength = {
-  type: string;
+  type: "media" | "social" | "computers" | "combat";
   speciality: string | null;
 };

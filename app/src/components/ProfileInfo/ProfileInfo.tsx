@@ -8,7 +8,7 @@ type Props = {};
 const ProfileInfo: React.FC<Props> = ({}) => {
   return (
     <NavLink
-      to={"/profile"}
+      to={"/profile/me"}
       className={({ isActive }) =>
         isActive ? styles.active + " " + styles.container : styles.container
       }

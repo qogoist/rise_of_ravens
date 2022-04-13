@@ -1,0 +1,21 @@
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: var(--gap-1);
+}
+
+.container > button {
+  grid-column: 4;
+  place-self: end;
+}
+
+.flexlist {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom {
+  margin-top: auto;
+}
