@@ -76,6 +76,30 @@ export const placeholderEvents = [
   },
 ];
 
+export const placeholderProjectBlueprints: ProjectBlueprint[] = [
+  {
+    name: "Project 1",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti eius rerum possimus, labore maxime at debitis optio deserunt nemo. Facere.",
+    tasks: [],
+    possibleTasks: [placeholderTasks[0], placeholderTasks[2]],
+  },
+  {
+    name: "Project 2",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti eius rerum possimus, labore maxime at debitis optio deserunt nemo. Facere.",
+    tasks: [],
+    possibleTasks: [placeholderTasks[1], placeholderTasks[2]],
+  },
+  {
+    name: "Project 3",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti eius rerum possimus, labore maxime at debitis optio deserunt nemo. Facere.",
+    tasks: [],
+    possibleTasks: [placeholderTasks[1], placeholderTasks[0]],
+  },
+];
+
 export const placeholderData: Follower = {
   id: "selfID",
   name: "Max Mustermann",
@@ -84,8 +108,8 @@ export const placeholderData: Follower = {
   image: "",
   influence: 1234567,
   strengths: [
-    { type: "Stärke 1", speciality: null },
-    { type: "Stärke 2", speciality: "Ausprägung XY" },
+    { type: "media", speciality: null },
+    { type: "social", speciality: "Ausprägung XY" },
   ],
   currentTask: null,
   tasks: placeholderTasks,

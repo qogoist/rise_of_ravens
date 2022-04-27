@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { placeholderEvents, placeholderTasks } from "../../helper/placeholders";
+import { placeholderProjectBlueprints, placeholderTasks } from "../../helper/placeholders";
 import Button from "../Button";
 import Card from "../Card";
 import ItemList from "../ItemList";
@@ -9,20 +9,29 @@ import styles from "./ProjectBuilder.module.css";
 type Props = {};
 
 const ProjectBuilder: React.FC<Props> = ({}) => {
-  const [activeProject, setActiveProject] = useState<WorldEvent | undefined>(undefined);
+  const [activeProject, setActiveProject] = useState<ProjectBlueprint | undefined>(undefined);
+  const [chosenTasks, setChosenTasks] = useState<Task[]>([]);
+  const [possibleTasks, setPossibleTasks] = useState<Task[]>([]);
 
   const handleProject = (e: React.MouseEvent<HTMLElement>, item: ListItem) => {
-    if (item != activeProject) setActiveProject(item as WorldEvent);
-    else setActiveProject(undefined);
+    if (item != activeProject) {
+      setActiveProject(item as ProjectBlueprint);
+      setPossibleTasks((item as ProjectBlueprint).possibleTasks);
+    } else setActiveProject(undefined);
+
+    setChosenTasks([]);
   };
 
-  const handleUpdate = (items: ListItem[] | undefined) => {
+  const handleChosenUpdate = (items: ListItem[] | undefined) => {
     if (!activeProject) return;
 
-    const newProject = activeProject;
-    newProject.tasks = items as Task[];
+    setChosenTasks(items as Task[]);
+  };
 
-    setActiveProject(newProject);
+  const handlePossibleUpdate = (items: ListItem[] | undefined) => {
+    if (!activeProject) return;
+
+    setPossibleTasks(items as Task[]);
   };
 
   return (
@@ -30,7 +39,7 @@ const ProjectBuilder: React.FC<Props> = ({}) => {
       <Card type="lighter">
         <h3>Verfügbare Projekte</h3>
         <ItemList
-          items={placeholderEvents}
+          items={placeholderProjectBlueprints}
           type="WorldEvent"
           onClick={handleProject}
           active={activeProject}
@@ -43,11 +52,11 @@ const ProjectBuilder: React.FC<Props> = ({}) => {
       <Card className={styles.flexlist} type="lighter">
         <h3>Gewählte Tasks</h3>
         <ItemList
-          items={[]}
+          items={chosenTasks}
           type="Task"
-          acceptdrag={true}
+          acceptdrag={activeProject ? true : false}
           draggable={true}
-          updateItems={handleUpdate}
+          updateItems={handleChosenUpdate}
         />
         <div className={styles.bottom}>
           <h3>Abschluss Task</h3>
@@ -55,13 +64,19 @@ const ProjectBuilder: React.FC<Props> = ({}) => {
             task={placeholderTasks[0]}
             active={false}
             draggable={false}
-            onClick={() => console.log("Jo")}
-          ></TaskItem>
+            onClick={() => {}}
+          />
         </div>
       </Card>
       <Card type="lighter">
         <h3>Verfügbare Tasks</h3>
-        <ItemList items={placeholderTasks} type="Task" draggable={true} acceptdrag={true} />
+        <ItemList
+          items={possibleTasks}
+          type="Task"
+          draggable={true}
+          acceptdrag={true}
+          updateItems={handlePossibleUpdate}
+        />
       </Card>
       <Button onClick={() => console.log(activeProject)}>Projekt Starten</Button>
     </div>

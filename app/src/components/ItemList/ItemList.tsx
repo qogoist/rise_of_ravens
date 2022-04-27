@@ -23,16 +23,11 @@ const ItemList: React.FC<Props> = ({
   onClick,
   updateItems,
 }) => {
-  const [listItems, setListItems] = useState(items);
   const [del, setDel] = useState<ListItem | null>(null);
   const list = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    updateItems?.(listItems);
-  }, [listItems]);
-
   const handleClick = (e: React.MouseEvent<HTMLElement>, item: ListItem) => {
-    onClick!(e, item);
+    onClick?.(e, item);
   };
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -56,8 +51,9 @@ const ItemList: React.FC<Props> = ({
     e.preventDefault();
 
     const item = JSON.parse(e.dataTransfer.getData("text"));
+    const newList = [...items!, item];
 
-    setListItems([...listItems!, item]);
+    updateItems?.(newList);
   };
 
   const handleDeleteItem = (item: ListItem) => {
@@ -69,12 +65,17 @@ const ItemList: React.FC<Props> = ({
 
     e.stopPropagation();
     e.preventDefault();
-
-    if (del) {
-      const newList = listItems!.filter(litem => del.name !== litem.name);
-      setListItems(newList);
-    }
   };
+
+  const removeItem = (item: ListItem) => {
+    const newList = [...items!];
+    const index = newList.findIndex(x => x.name === item.name);
+
+    if (index > -1) newList.splice(index, 1);
+
+    updateItems?.(newList);
+  };
+
   return (
     <div
       ref={list}
@@ -84,8 +85,8 @@ const ItemList: React.FC<Props> = ({
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
-      {listItems &&
-        listItems.map(item => {
+      {items &&
+        items.map(item => {
           const isActive = item === active ? true : false;
 
           switch (type) {
@@ -106,6 +107,7 @@ const ItemList: React.FC<Props> = ({
                   task={item as Task}
                   onClick={handleClick}
                   deleteTask={handleDeleteItem}
+                  dragEnd={removeItem}
                   active={isActive}
                   draggable={draggable}
                 />

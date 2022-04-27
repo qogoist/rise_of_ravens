@@ -31,6 +31,12 @@ type WorldEvent = {
   tasks: Task[];
 };
 
+type Project = WorldEvent & {};
+
+type ProjectBlueprint = Project & {
+  possibleTasks: Task[];
+};
+
 type Task = {
   name: string;
   description: string;
