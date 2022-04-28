@@ -1,3 +1,14 @@
+type GameState = {
+  leader: Player;
+  articles: Article[];
+};
+
+type Player = {
+  email: string;
+  password: string;
+  character: Character;
+};
+
 type ChatMessage = {
   sender: string;
   content: string; //TODO: Make this take any sort of content.
@@ -18,7 +29,7 @@ type Article = {
 };
 
 type Categories = {
-  type: "events" | "projects" | "follower";
+  type: string;
   display: string;
 };
 
@@ -43,7 +54,7 @@ type Task = {
   participants: Follower[];
 };
 
-type Follower = {
+type Character = {
   id: string;
   name: string;
   rank: string;
@@ -55,6 +66,8 @@ type Follower = {
   tasks: Task[];
   activeSince: Date;
 };
+
+type Follower = Character & {};
 
 type Strength = {
   type: "media" | "social" | "computers" | "combat";

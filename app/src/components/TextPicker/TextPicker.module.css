@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+
+.textBlock {
+  padding: 1rem;
+  background-color: var(--clr-gray-250);
+  transition: background-color var(--ts-speed-4) ease-in-out;
+}
+
+.textBlock:hover {
+  background-color: var(--clr-gray-300);
+}
+
+.textBlock.active {
+  background-color: var(--clr-gray-300);
+  outline: 2px solid var(--clr-primary-dark);
+}

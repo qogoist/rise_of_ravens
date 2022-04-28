@@ -37,7 +37,7 @@ const MainApp: React.FC<Props> = ({}) => {
           <Route path="/*" element={<Home />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/project" element={<Project />} />
-          <Route path="/studio" element={<DesignStudio />} />
+          <Route path="/studio/*" element={<DesignStudio />} />
           <Route path="/profile">
             <Route path=":playerID" element={<PlayerProfile />} />
             <Route path="me" element={<PlayerProfile self={true} />} />

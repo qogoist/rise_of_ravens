@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  gap: var(--gap-1);
+  grid-template-columns: 1fr 1fr;
+}
+
+.imageButton {
+  padding: 0;
+  overflow: hidden;
+}
+
+.imageButton img,
+.imageButton svg {
+  transition: var(--ts-speed-4) ease-in-out;
+}
+
+.imageButton:hover img,
+.imageButton:hover svg,
+.imageButton.active img,
+.imageButton.active svg {
+  filter: hue-rotate(15deg);
+  transform: scale(1.1);
+}
+
+.imageButton.active {
+  outline: 2px solid var(--clr-primary-dark);
+}

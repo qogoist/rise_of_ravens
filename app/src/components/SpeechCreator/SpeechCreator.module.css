@@ -1,0 +1,30 @@
+.container {
+  height: 100%;
+
+  display: grid;
+  gap: var(--gap-2);
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+}
+
+.speechContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.speechContainer > button {
+  align-self: flex-end;
+}
+
+.speech {
+  height: 100%;
+  margin-inline: var(--gap-1);
+  margin-bottom: var(--gap-2);
+
+  color: var(--clr-gray-1000);
+  background-color: var(--clr-gray-000);
+}
+
+li {
+  cursor: pointer;
+}
